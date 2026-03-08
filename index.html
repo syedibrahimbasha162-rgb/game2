@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proper Ludo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="game-shell">
+      <header class="topbar">
+        <h1>Proper Ludo</h1>
+        <p>Classic 4-color Ludo: You (Red) vs 3 CPU players</p>
+      </header>
+      <canvas id="board" width="720" height="720" aria-label="Ludo board"></canvas>
+    </section>
+
+    <aside class="sidebar">
+      <div class="card status">
+        <h2>Turn</h2>
+        <p><strong>Player:</strong> <span id="turnLabel">Red</span></p>
+        <p><strong>Dice:</strong> <span id="diceLabel">-</span></p>
+        <p><strong>Message:</strong> <span id="messageLabel">Roll to start.</span></p>
+      </div>
+
+      <div class="card controls">
+        <button id="rollBtn">Roll Dice</button>
+        <button id="newBtn">New Game</button>
+      </div>
+
+      <div class="card rules">
+        <h3>Rules</h3>
+        <ul>
+          <li>Roll 6 to move a token out of yard.</li>
+          <li>Move around 52-track, then enter your home lane.</li>
+          <li>Exact roll is required to reach center and finish.</li>
+          <li>Landing on opponent sends them back to yard.</li>
+          <li>Safe cells cannot be captured.</li>
+          <li>Three consecutive 6s forfeits your turn.</li>
+          <li>First player to finish all 4 tokens wins.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

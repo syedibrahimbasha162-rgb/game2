@@ -1,0 +1,131 @@
+:root {
+  --bg1: #fbf6ea;
+  --bg2: #efe4cc;
+  --card: #fffaf0;
+  --ink: #2f2a22;
+  --accent: #e19f2c;
+  --border: #ccb993;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  background: radial-gradient(circle at 15% 10%, var(--bg1), var(--bg2));
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(340px, 1fr) 340px;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.game-shell,
+.sidebar {
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.game-shell {
+  padding: 0.8rem;
+}
+
+.topbar {
+  margin-bottom: 0.7rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.topbar p {
+  margin: 0.3rem 0 0;
+  opacity: 0.85;
+}
+
+#board {
+  width: 100%;
+  max-height: calc(100vh - 155px);
+  border-radius: 12px;
+  border: 1px solid #d5c5a2;
+  background: linear-gradient(140deg, #fffef9, #f7f0df);
+}
+
+.sidebar {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.card {
+  border: 1px solid #e4d6ba;
+  border-radius: 12px;
+  background: #fffdf6;
+  padding: 0.75rem;
+}
+
+.status h2,
+.rules h3 {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+}
+
+.status p {
+  margin: 0.35rem 0;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#rollBtn {
+  background: var(--accent);
+}
+
+#rollBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+#newBtn {
+  background: #d9d1c2;
+}
+
+.rules ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.rules li {
+  margin: 0.35rem 0;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  #board {
+    max-height: 68vh;
+  }
+}
